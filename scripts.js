@@ -112,7 +112,7 @@ const updateUI = function (item) {
   });
 };
 updateUI(items);
-console.log(items);
+// console.log(items);
 //3. get user input and use that to update the UI
 
 // document.addEventListener('keyup', e => {
@@ -128,19 +128,17 @@ console.log(items);
 
 // Event listener for the search box
 searchBox.addEventListener('keyup', function (e) {
-  if (e.key === 'Enter') {
-    const searchTerm = searchBox.value.toLowerCase();
+  const searchTerm = searchBox.value.toLowerCase();
 
-    // Filter items based on user input
-    const searchResults = items.filter(item =>
-      item.itemName.toLowerCase().includes(searchTerm)
-    );
+  // Filter items based on user input
+  const searchResults = items.filter(item =>
+    item.itemName.toLowerCase().includes(searchTerm)
+  );
 
-    console.log(searchResults);
-    // Update UI with filtered results
-    searchResults.length > 0 ? updateUI(searchResults) : updateUI(items);
+  // console.log(searchResults);
+  // Update UI with filtered results
+  searchResults.length > 0 ? updateUI(searchResults) : updateUI(items);
 
-    // Clear the search box
-    searchBox.value = '';
-  }
+  // Clear the search box
+  // searchBox.value = '';
 });
